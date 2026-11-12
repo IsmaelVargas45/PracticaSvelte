@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light;
+
+  /* Colores de la app. Los componentes los usan con var(--nombre). */
+  --fondo: #f3efe7;
+  --tarjeta: #fffdf8;
+  --campo: #f8f5ee;
+  --borde: #e1dccf;
+  --texto: #26231d;
+  --texto-secundario: #6f6a5e;
+  --naranja: #266452; /* color de acento (el nombre viene del proyecto original) */
+  --naranja-claro: #348266;
+  --error: #b3402f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+}
+
+#app {
+  width: min(1060px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+/* Controles de formulario compartidos por todas las pantallas */
+button,
+input,
+select {
+  font: inherit;
+}
+
+label {
+  color: var(--texto-secundario);
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+input:not([type='checkbox'], [type='radio']),
+select {
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--borde);
+  border-radius: 0.55rem;
+  background: var(--campo);
+  color: var(--texto);
+}
+
+:focus-visible {
+  outline: 2px solid var(--naranja-claro);
+  outline-offset: 2px;
+}
+
+/* Botones: .boton es el principal y .boton.secundario el de menor énfasis */
+.boton {
+  min-height: 2.8rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  background: var(--naranja);
+  color: #fffdf8;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boton:hover:not(:disabled) {
+  background: var(--naranja-claro);
+}
+
+.boton.secundario {
+  border-color: var(--borde);
+  background: var(--campo);
+  color: var(--texto);
+}
+
+.boton.secundario:hover:not(:disabled) {
+  border-color: var(--naranja);
+  background: var(--campo);
+}
+
+.boton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
