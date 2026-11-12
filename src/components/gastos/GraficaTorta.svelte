@@ -83,7 +83,8 @@
 {:else}
   <div class="grafica">
     <div class="dona">
-      <canvas role="img" aria-label="Reparto del gasto por categoría" {@attach grafica}></canvas>
+      <canvas aria-label="Reparto del gasto por categoría"
+      {@attach grafica}></canvas>
       <div class="centro">
         <span class="etiqueta">{activo ? activo.categoria : 'Total del mes'}</span>
         <strong>{pesos.format(activo ? activo.total : total)}</strong>
